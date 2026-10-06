@@ -1,0 +1,135 @@
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  min-width: 0;
+  padding: var(--space-3);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-text);
+  text-align: start;
+}
+
+.item:hover {
+  background: var(--color-hover);
+}
+
+.item:active {
+  background: var(--color-pressed, var(--color-hover));
+}
+
+.item[aria-current='true'] {
+  background: var(--color-selected);
+}
+
+.avatar {
+  position: relative;
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.unseen {
+  position: absolute;
+  top: 0;
+  inset-inline-end: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--radius-full);
+  background: var(--color-accent-contrast);
+  box-shadow: 0 0 0 2px var(--color-bg);
+}
+
+.unseenText {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.body {
+  display: grid;
+  flex: 1;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.topline {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  font-weight: var(--font-weight-medium);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.time {
+  flex: none;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.previewLine {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-width: 0;
+  min-height: calc(var(--font-size-sm) * var(--line-height-tight));
+}
+
+.previewStatus {
+  display: flex;
+  flex: none;
+  color: var(--color-text-muted);
+}
+
+.forwardMark {
+  flex: none;
+  width: 0.875rem;
+  height: 0.875rem;
+  color: var(--color-icon);
+}
+
+.forwardedText {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.preview {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

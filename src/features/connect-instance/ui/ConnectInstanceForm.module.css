@@ -1,0 +1,71 @@
+.form {
+  display: grid;
+  gap: var(--space-4);
+  min-width: 0;
+  margin-top: var(--space-6);
+}
+
+.fields {
+  display: grid;
+  gap: var(--space-4);
+  animation: item-in var(--duration-enter-item) var(--easing-standard) backwards;
+  animation-delay: calc(var(--enter-stagger) * 2);
+}
+
+.tokenField {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.tokenInput {
+  flex: 1;
+  min-width: 0;
+}
+
+.tokenToggle {
+  flex: none;
+  margin-top: calc(
+    var(--font-size-sm) * var(--line-height-tight) + var(--space-2)
+  );
+}
+
+.formError {
+  min-width: 0;
+  margin: 0;
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  font-size: var(--font-size-sm);
+  overflow-wrap: anywhere;
+}
+
+.actions {
+  display: flex;
+  animation: item-in var(--duration-enter-item) var(--easing-standard) backwards;
+  animation-delay: calc(var(--enter-stagger) * 3);
+}
+
+.submit {
+  width: 100%;
+}
+
+@keyframes item-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--enter-item-shift));
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fields,
+  .actions {
+    animation: none;
+  }
+}

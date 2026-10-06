@@ -1,0 +1,22 @@
+button.iconButton {
+  width: 2.5rem;
+  min-width: 2.5rem;
+  padding: 0;
+  border-color: var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-icon, var(--color-text-muted));
+}
+
+button.iconButton:hover:not(:disabled) {
+  background: var(--color-hover);
+}
+
+button.iconButton:active:not(:disabled) {
+  background: var(--color-pressed, var(--color-hover));
+}
+
+.iconButton svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}

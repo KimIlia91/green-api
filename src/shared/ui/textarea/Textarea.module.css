@@ -1,0 +1,7 @@
+.textarea {
+  min-height: 2.75rem;
+  max-height: 8rem;
+  overflow: auto;
+  overflow-wrap: anywhere;
+  resize: none;
+}

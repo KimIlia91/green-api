@@ -1,0 +1,64 @@
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* scrollbar-color в Chromium заменяет ::-webkit-scrollbar, поэтому
+   правило остаётся в блоке Firefox. */
+@media (hover: hover) and (pointer: fine) and (forced-colors: none) {
+  #root *::-webkit-scrollbar {
+    width: var(--scrollbar-size);
+    height: var(--scrollbar-size);
+    background: transparent;
+  }
+
+  #root *::-webkit-scrollbar-track,
+  #root *::-webkit-scrollbar-track-piece,
+  #root *::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  #root *::-webkit-scrollbar-thumb {
+    border: 0;
+    border-radius: var(--radius-full);
+    background: var(--color-scrollbar-thumb);
+  }
+
+  #root *::-webkit-scrollbar-thumb:hover {
+    background: var(--color-scrollbar-thumb-hover);
+  }
+
+  #root *::-webkit-scrollbar-thumb:active {
+    background: var(--color-scrollbar-thumb-pressed);
+  }
+
+  #root *::-webkit-scrollbar-button,
+  #root *::-webkit-scrollbar-button:single-button,
+  #root *::-webkit-scrollbar-button:vertical:start:decrement,
+  #root *::-webkit-scrollbar-button:vertical:end:increment,
+  #root *::-webkit-scrollbar-button:horizontal:start:decrement,
+  #root *::-webkit-scrollbar-button:horizontal:end:increment {
+    display: none;
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  @media (hover: hover) and (pointer: fine) and (forced-colors: none) {
+    #root {
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-scrollbar-thumb) transparent;
+    }
+  }
+}

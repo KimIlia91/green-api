@@ -1,0 +1,17 @@
+.root {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  height: var(--visual-viewport-height, 100dvh);
+  max-height: var(--visual-viewport-height, 100dvh);
+  margin-top: var(--visual-viewport-offset, 0px);
+  padding-top: env(safe-area-inset-top);
+  padding-right: env(safe-area-inset-right);
+  padding-left: env(safe-area-inset-left);
+  overflow: hidden;
+  background: var(--color-bg);
+  color: var(--color-text);
+}

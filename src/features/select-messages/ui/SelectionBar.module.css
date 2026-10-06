@@ -1,0 +1,103 @@
+.bar {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  width: min(100% - (var(--space-3) * 2), var(--layout-thread));
+  min-width: 0;
+  margin: var(--space-3) auto max(var(--space-3), env(safe-area-inset-bottom));
+  border-radius: var(--radius-md);
+  background: var(--color-float, var(--color-surface));
+  animation: barIn var(--duration-normal) var(--easing-standard);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  min-height: 3rem;
+  padding-inline: var(--space-2) var(--space-3);
+}
+
+.count {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cancel {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--color-icon, var(--color-text-muted));
+}
+
+.cancel svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.cancel:hover {
+  background: var(--color-hover);
+}
+
+.cancel:focus-visible,
+.action:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.action {
+  flex: none;
+  min-width: 0;
+  min-height: 2rem;
+  padding: 0 var(--space-2);
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-accent);
+  font: inherit;
+  font-size: var(--font-size-sm);
+}
+
+.action:hover:not(:disabled) {
+  background: var(--color-hover);
+}
+
+.action:disabled {
+  color: var(--color-disabled-text);
+}
+
+.reason {
+  margin: 0;
+  padding: 0 var(--space-3) var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-tight);
+  overflow-wrap: anywhere;
+}
+
+@keyframes barIn {
+  from {
+    opacity: 0;
+    translate: 0 0.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    animation: none;
+  }
+}

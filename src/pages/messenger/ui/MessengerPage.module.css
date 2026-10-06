@@ -1,0 +1,79 @@
+.page {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.workspace {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+
+.sidebar {
+  display: flex;
+  flex: 0 1 calc(var(--layout-rail) + var(--layout-chat-list));
+  width: calc(var(--layout-rail) + var(--layout-chat-list));
+  min-width: calc(var(--layout-rail) + var(--layout-chat-list-min));
+  max-width: calc(var(--layout-rail) + var(--layout-chat-list));
+  min-height: 0;
+}
+
+.conversation {
+  position: relative;
+  display: flex;
+  flex: 1 1 var(--layout-thread-min);
+  flex-direction: column;
+  min-width: var(--layout-thread-min);
+  min-height: 0;
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
+
+.conversation::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-color: var(--color-chat-pattern);
+  -webkit-mask-image: url('./chat-background.svg');
+  mask-image: url('./chat-background.svg');
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+  -webkit-mask-position: 0 0;
+  mask-position: 0 0;
+  -webkit-mask-size: 280px 280px;
+  mask-size: 280px 280px;
+  mask-mode: alpha;
+}
+
+.conversation > * {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  min-height: 0;
+}
+
+@media (max-width: 925px) {
+  .sidebar,
+  .conversation {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .page[data-route='list'] .conversation {
+    display: none;
+  }
+
+  .page[data-route='chat'] .sidebar {
+    display: none;
+  }
+}

@@ -1,0 +1,53 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: max(var(--space-4), env(safe-area-inset-top))
+    max(var(--space-4), env(safe-area-inset-right))
+    max(var(--space-4), env(safe-area-inset-bottom))
+    max(var(--space-4), env(safe-area-inset-left));
+  overflow: auto;
+  pointer-events: auto;
+  background: var(--color-overlay);
+  animation: fade-in var(--duration-normal) var(--easing-standard);
+}
+
+.dialog {
+  display: grid;
+  gap: var(--space-4);
+  width: min(100%, 26rem);
+  min-width: 0;
+  max-height: none;
+  margin-block: auto;
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-float, var(--color-surface));
+  box-shadow: var(--shadow-md);
+  color: var(--color-text);
+}
+
+.title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backdrop {
+    animation: none;
+  }
+}

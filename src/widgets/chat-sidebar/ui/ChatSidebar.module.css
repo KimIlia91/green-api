@@ -1,0 +1,190 @@
+.sidebar {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.rail {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  width: var(--layout-rail);
+  padding: var(--space-3) var(--space-1);
+  background: var(--color-rail);
+  border-right: 1px solid var(--color-border);
+}
+
+.railButton {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-1);
+  width: 100%;
+  padding: var(--space-2) var(--space-1);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-icon, var(--color-text-muted));
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-tight);
+}
+
+.railButton[aria-current='page'] {
+  color: var(--color-accent);
+}
+
+.railButton + .railButton {
+  margin-top: auto;
+}
+
+.railButton svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.list {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: var(--layout-chat-list-min);
+  max-width: var(--layout-chat-list);
+  min-height: 0;
+  overflow: hidden;
+  border-right: 1px solid var(--color-border);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  height: var(--layout-chat-header);
+  padding: 0 var(--space-4);
+}
+
+.title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+}
+
+.header button.addButton {
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+  min-height: 2rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+.header button.addButton svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.header button.addButton:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+}
+
+.header button.addButton:active:not(:disabled) {
+  background: var(--color-accent-pressed, var(--color-accent));
+}
+
+.header button.addButton:disabled {
+  background: var(--color-disabled-bg);
+  color: var(--color-disabled-text);
+}
+
+.search {
+  padding: 0 var(--space-4) var(--space-3);
+}
+
+.searchInput {
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-muted);
+}
+
+.items {
+  display: grid;
+  flex: 1 1 auto;
+  align-content: start;
+  gap: var(--space-1);
+  min-height: 0;
+  margin: 0;
+  padding: 0 var(--space-2) var(--space-3);
+  overflow: auto;
+  overscroll-behavior: contain;
+  list-style: none;
+}
+
+.empty,
+.notice,
+.loading {
+  margin: 0;
+  padding: var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+}
+
+.empty {
+  color: var(--color-text-muted);
+}
+
+.notice {
+  display: grid;
+  gap: var(--space-2);
+  color: var(--color-danger);
+}
+
+.notice p {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 925px) {
+  .sidebar {
+    flex-direction: column;
+  }
+
+  .list {
+    order: 0;
+    min-width: 0;
+    max-width: none;
+    border-right: 0;
+  }
+
+  .rail {
+    order: 1;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    border-right: 0;
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-2) var(--space-4)
+      max(var(--space-2), env(safe-area-inset-bottom));
+  }
+
+  .railButton {
+    width: auto;
+    min-width: 4.5rem;
+  }
+
+  .railButton + .railButton {
+    margin-top: 0;
+  }
+}

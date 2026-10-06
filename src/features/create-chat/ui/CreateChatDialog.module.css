@@ -1,0 +1,17 @@
+.form {
+  display: grid;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.cancel {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
