@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/770bf427-d417-4ccf-90a1-1860f4a0faeb
+
 # MAX Messenger — GREEN-API
 
 Веб-клиент личной переписки в MAX через HTTP API GREEN-API.
