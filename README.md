@@ -1,7 +1,3 @@
-
-
-https://github.com/user-attachments/assets/770bf427-d417-4ccf-90a1-1860f4a0faeb
-
 # MAX Messenger — GREEN-API
 
 Веб-клиент личной переписки в MAX через HTTP API GREEN-API.
@@ -11,7 +7,9 @@ https://github.com/user-attachments/assets/770bf427-d417-4ccf-90a1-1860f4a0faeb
 ## Демонстрация
 
 - Опубликованный сайт: https://green-api-wine.vercel.app/
-- Демо-видео: Ссылка будет добавлена
+- Демо-видео:
+
+https://github.com/user-attachments/assets/770bf427-d417-4ccf-90a1-1860f4a0faeb
 
 ## Основные возможности
 
