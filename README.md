@@ -26,14 +26,30 @@ React, TypeScript, Vite, React Router, Zustand и CSS Modules. Исходный 
 
 ## Локальный запуск
 
-Нужен Node.js 20.19 или новее в ветке 20, 22.13 или новее в ветке 22, либо 24 и новее. Так заданы требования установленных Vite и ESLint.
+Требуется Node.js 22.13+ в ветке 22.
 
-```bash
-npm ci
-npm run dev
-```
+1. Склонируйте репозиторий и перейдите в папку проекта:
 
-Дополнительный флаг для `npm ci` не нужен.
+   ```bash
+   git clone https://github.com/KimIlia91/green-api.git
+   cd green-api
+   ```
+
+2. Установите зависимости:
+
+   ```bash
+   npm ci --legacy-peer-deps
+   ```
+
+3. Запустите сервер разработки:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Откройте адрес из терминала — обычно http://localhost:5173.
+
+Реквизиты GREEN-API вводятся в форме входа. Записывать их в `.env` не требуется.
 
 ## Подключение GREEN-API
 
